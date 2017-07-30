@@ -10,16 +10,12 @@ import ChatIcon from './Icons/ChatIcon.jsx';
 const defaultProps = {
     floating: {
         type: Boolean,
-        default: true
+        default: true,
     },
     opened: {
         type: Boolean,
-        default: false
+        default: false,
     }
-};
-
-const test = () => {
-    console.log('Click');
 };
 
 const Chatbot = {
@@ -29,7 +25,7 @@ const Chatbot = {
     props: Object.assign({}, defaultProps),
 
 
-    render(h) {
+    render() {
         return (
             <div class="cb">
                 {
@@ -75,20 +71,20 @@ const Chatbot = {
         CloseIcon,
         ChatbotContainer,
         FloatButton,
-        ChatIcon
+        ChatIcon,
     },
 
     data() {
         return {
             isFloating: this.floating,
-            isOpen: this.isOpen
+            isOpen: this.isOpen,
         }
     },
 
     methods: {
         setChatbotVisibility(state) {
             this.isOpen = state;
-        }
+        },
     },
 
 };
