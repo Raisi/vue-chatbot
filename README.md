@@ -3,7 +3,6 @@ Playaround with Styled Components + JSX. (Under Construction)
 
 Rebuild after the great [React CHatbot](https://github.com/LucasBassetti/react-simple-chatbot)
 
-> A Chatbot App
 
 ## Build Setup
 
