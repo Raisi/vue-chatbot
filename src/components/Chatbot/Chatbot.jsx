@@ -18,21 +18,16 @@ const defaultProps = {
     }
 };
 
+const test = () => {
+    console.log('Click');
+};
+
 const Chatbot = {
 
     name: 'Chatbot',
 
     props: Object.assign({}, defaultProps),
 
-    components: {
-        Header,
-        HeaderTitle,
-        HeaderIcon,
-        CloseIcon,
-        ChatbotContainer,
-        FloatButton,
-        ChatIcon
-    },
 
     render(h) {
         return (
@@ -40,9 +35,9 @@ const Chatbot = {
                 {
                     this.floating &&
                     <Float-button
-                        className="rsc-float-button"
-                        opened={this.opened}
-                        onClick={() => 'Float clicked'}
+                        class="rsc-float-button"
+                        opened={this.isOpen}
+                        nativeOnClick={() => this.setChatbotVisibility(true)}
                     >
                         <Chat-icon />
                     </Float-button>
@@ -50,8 +45,8 @@ const Chatbot = {
 
                 <Chatbot-container
                     class="cb-container"
-                    floating={this.floating}
-                    opened={this.opened}
+                    floating={this.isFloating}
+                    opened={this.isOpen}
                 >
 
 
@@ -63,6 +58,7 @@ const Chatbot = {
                         </Header-title>
                         <Header-icon
                             class="cb-header__clo>se-button"
+                            nativeOnClick={() => this.setChatbotVisibility(false)}
                         >
                             <Close-icon />
                         </Header-icon>
@@ -70,7 +66,31 @@ const Chatbot = {
                 </Chatbot-container>
             </div>
         )
-    }
+    },
+
+    components: {
+        Header,
+        HeaderTitle,
+        HeaderIcon,
+        CloseIcon,
+        ChatbotContainer,
+        FloatButton,
+        ChatIcon
+    },
+
+    data() {
+        return {
+            isFloating: this.floating,
+            isOpen: this.isOpen
+        }
+    },
+
+    methods: {
+        setChatbotVisibility(state) {
+            this.isOpen = state;
+        }
+    },
+
 };
 
 
