@@ -6,6 +6,10 @@ import CloseIcon from './Icons/CloseIcon.jsx';
 import FloatButton from './FloatButton.jsx';
 import ChatIcon from './Icons/ChatIcon.jsx';
 import Content from './Content.jsx';
+import Input from './Input.jsx';
+import Footer from './Footer.jsx';
+import SubmitButton from './SubmitButton.jsx';
+import SubmitIcon from './Icons/SubmitIcon.jsx';
 
 
 const defaultProps = {
@@ -16,6 +20,11 @@ const defaultProps = {
     opened: {
         type: Boolean,
         default: false,
+    },
+
+    placeholder: {
+        type: String,
+        default: 'Type the message ...'
     }
 };
 
@@ -62,10 +71,35 @@ const Chatbot = {
                     </Header>
 
                     <Content
-                        class="rsc-content"
+                        class="cb-content"
                         floating={this.floating}
                     >
                     </Content>
+
+                    <Footer
+                        class="cb-footer"
+                    >
+                        <Input
+                            type="textarea"
+                            class="cb-input"
+                            placeholder={this.inputInvalid ? '' : this.placeholder}
+                            onKeyPress={this.handleKeyPress}
+                            onChange={this.onValueChange}
+                            value={this.inputValue}
+                            floating={this.floating}
+                            invalid={this.inputInvalid}
+                            disabled={this.disabled}
+                        />
+
+                        <Submit-button
+                            class="cb-submit-button"
+                            nativeOnClick={this.handleSubmitButton}
+                            invalid={this.inputInvalid}
+                            disabled={this.disabled}
+                        >
+                            <Submit-icon />
+                        </Submit-button>
+                    </Footer>
                 </Chatbot-container>
             </div>
         )
@@ -79,13 +113,26 @@ const Chatbot = {
         ChatbotContainer,
         FloatButton,
         ChatIcon,
-        Content
+        Content,
+        Footer,
+        SubmitButton,
+        SubmitIcon,
+        Input,
     },
 
     data() {
         return {
             isFloating: this.floating,
-            isOpen: this.isOpen,
+            isOpen: this.opened || !this.floating,
+            inputInvalid: false,
+            disabled: true,
+            inputValue: '',
+            renderedSteps: [],
+            previousSteps: [],
+            currentStep: {},
+            previousStep: {},
+            steps: {},
+            defaultUserSettings: {},
         }
     },
 
@@ -93,6 +140,19 @@ const Chatbot = {
         setChatbotVisibility(state) {
             this.isOpen = state;
         },
+
+        handleSubmitButton(ev) {
+            console.log('Submit Click');
+        },
+
+        handleKeyPress(ev) {
+
+        },
+
+        onValueChange() {
+
+        }
+
     },
 
 };

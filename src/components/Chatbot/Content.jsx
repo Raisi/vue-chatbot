@@ -1,10 +1,10 @@
 import styled from 'vue-styled-components';
 
-const floatButtonProps = {
+const contentPropTypes = {
     floating: Boolean,
 };
 
-const Content = styled('div', floatButtonProps)`
+const Content = styled('div', contentPropTypes)`
   height: 400px;
   overflow-y: scroll;
   margin-top: 2px;

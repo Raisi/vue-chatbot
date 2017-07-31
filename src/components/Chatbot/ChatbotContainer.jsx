@@ -3,12 +3,12 @@ import defaultTheme from './theme';
 
 // TODO For all move to Theme Interface, that you only need to pass an Theme Object on an Provider
 
-const containerProps = {
+const containerPropTypes = {
     floating: Boolean,
     opened: Boolean,
 };
 
-const ChatbotContainer = styled('div', containerProps)`
+const ChatbotContainer = styled('div', containerPropTypes)`
   background-color: ${defaultTheme.background};
   border-radius: 10px;
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.15);

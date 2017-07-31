@@ -1,11 +1,11 @@
 import styled from 'vue-styled-components';
 import defaultTheme from './theme'
 
-const floatButtonProps = {
+const floatButtonPropTypes = {
     opened: Boolean,
 };
 
-const FloatButton = styled('a', floatButtonProps)`
+const FloatButton = styled('a', floatButtonPropTypes)`
   align-items: center;
   cursor: pointer;
   background-color: ${defaultTheme.headerBgColor};

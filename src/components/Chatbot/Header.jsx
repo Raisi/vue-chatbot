@@ -1,10 +1,6 @@
 import styled from 'vue-styled-components';
 import defaultTheme from './theme';
 
-const defaultProps = Object.assign({}, {
-    theme: Object
-});
-
 // TODO For all move to Theme Interface, that you only need to pass an Theme Object on an Provider
 
 const Header = styled.div`
