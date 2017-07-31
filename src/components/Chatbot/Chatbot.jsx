@@ -5,6 +5,7 @@ import HeaderIcon from './HeaderIcon.jsx';
 import CloseIcon from './Icons/CloseIcon.jsx';
 import FloatButton from './FloatButton.jsx';
 import ChatIcon from './Icons/ChatIcon.jsx';
+import Content from './Content.jsx';
 
 
 const defaultProps = {
@@ -53,12 +54,18 @@ const Chatbot = {
                             Chatbot title
                         </Header-title>
                         <Header-icon
-                            class="cb-header__clo>se-button"
+                            class="cb-header__close-button"
                             nativeOnClick={() => this.setChatbotVisibility(false)}
                         >
                             <Close-icon />
                         </Header-icon>
                     </Header>
+
+                    <Content
+                        class="rsc-content"
+                        floating={this.floating}
+                    >
+                    </Content>
                 </Chatbot-container>
             </div>
         )
@@ -72,6 +79,7 @@ const Chatbot = {
         ChatbotContainer,
         FloatButton,
         ChatIcon,
+        Content
     },
 
     data() {
