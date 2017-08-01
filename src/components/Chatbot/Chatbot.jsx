@@ -24,8 +24,13 @@ const defaultProps = {
 
     placeholder: {
         type: String,
-        default: 'Type the message ...'
-    }
+        default: 'Type the message ...',
+    },
+
+    hideSubmitButton: {
+        type: Boolean,
+        default: false,
+    },
 };
 
 const Chatbot = {
@@ -41,7 +46,7 @@ const Chatbot = {
                 {
                     this.floating &&
                     <Float-button
-                        class="rsc-float-button"
+                        class="cb-float-button"
                         opened={this.isOpen}
                         nativeOnClick={() => this.setChatbotVisibility(true)}
                     >
@@ -89,16 +94,19 @@ const Chatbot = {
                             floating={this.floating}
                             invalid={this.inputInvalid}
                             disabled={this.disabled}
+                            hasButton={!this.hideSubmitButton}
                         />
-
-                        <Submit-button
-                            class="cb-submit-button"
-                            nativeOnClick={this.handleSubmitButton}
-                            invalid={this.inputInvalid}
-                            disabled={this.disabled}
-                        >
-                            <Submit-icon />
-                        </Submit-button>
+                        {
+                            !this.hideSubmitButton &&
+                            <Submit-button
+                                class="cb-submit-button"
+                                nativeOnClick={this.handleSubmitButton}
+                                invalid={this.inputInvalid}
+                                disabled={this.disabled}
+                            >
+                                <Submit-icon />
+                            </Submit-button>
+                        }
                     </Footer>
                 </Chatbot-container>
             </div>
