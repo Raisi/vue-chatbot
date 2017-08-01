@@ -18,7 +18,7 @@ const colors = {
 };
 
 
-const getThemeColor = name => colors[name]
+const getThemeColor = name => colors[name];
 
 
 export { colors, getThemeColor }
