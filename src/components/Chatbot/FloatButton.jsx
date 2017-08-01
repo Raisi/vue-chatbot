@@ -14,6 +14,7 @@ const FloatButton = styled('a', floatButtonPropTypes)`
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.15);
   display: flex;
   fill: ${defaultTheme.headerFontColor};
+  stroke: ${defaultTheme.headerFontColor};
   height: 56px;
   justify-content: center;
   position: fixed;
