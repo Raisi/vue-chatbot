@@ -1,5 +1,5 @@
 import styled from 'vue-styled-components';
-import { invalidInput } from '@/common/animations.jsx';
+import { invalidInput } from '@/common/animations';
 
 const SubmitButtonPropTypes = {
     invalid: Boolean,

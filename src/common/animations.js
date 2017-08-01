@@ -1,5 +1,9 @@
 import { injectGlobal } from 'vue-styled-components';
 
+/**
+ * Until better solution is found define animations here
+ * and export their reference name as String
+ */
 injectGlobal`
     @keyframes loading {
         0% { opacity: .2; }
